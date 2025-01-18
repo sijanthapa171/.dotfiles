@@ -1,21 +1,47 @@
-import = [
-    "~/.config/alacritty/themes/themes/coolnight.toml"
-]
+window:
+  dimensions:
+    columns: 90
+    lines: 30
+  padding:
+    x: 6
+    y: 4
+  dynamic_title: false
 
-[ env ]
-TERM = "xterm-256color"
+font:
+  normal:
+    family: JetBrainsMono Nerd Font
+  size: 12
 
-[window]
-padding.x = 10
-padding.y = 10
+draw_bold_text_with_bright_colors: true
 
-decorations = "Buttonless"
-
-[font]
-normal.family = "MesloLGS Nerd Font Mono"
-
-#regular
-size = 24
-
-#for video
-# size = 35.0
+colors:
+  primary:
+    background: "#32302f"
+    foreground: "#d4be98"
+  cursor:
+    text: CellBackground
+    cursor: CellForeground
+  vi_mode_cursor:
+    text: CellBackground
+    cursor: CellForeground
+  selection:
+    text: CellBackground
+    background: CellForeground
+  normal:
+    black: "#45403d"
+    red: "#ea6962"
+    green: "#a9b665"
+    yellow: "#d8a657"
+    blue: "#7daea3"
+    magenta: "#d3869b"
+    cyan: "#89b482"
+    white: "#d4be98"
+  bright:
+    black: "#45403d"
+    red: "#ea6962"
+    green: "#a9b665"
+    yellow: "#d8a657"
+    blue: "#7daea3"
+    magenta: "#d3869b"
+    cyan: "#89b482"
+    white: "#d4be98"
