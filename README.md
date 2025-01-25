@@ -19,36 +19,4 @@
 
 # 👻 Don't blindly use my setup. Use at your own risk!!!
 
-## Install Guide
-
-### zsh
-```
-sudo apt install zsh 
-```
 <b> Make sure Zsh is set as your default shell. I use the Powerlevel10k theme, which you can clone from the official GitHub repository. Additionally, clone the Zsh Autosuggestions and Syntax Highlighting plugins from their respective GitHub repositories. 
-
-### Neovim 
-```
-sudo apt install neovim
-```
-
-### Btop 
-```
-sudo apt install btop
-```
-
-### Alacritty 
-```
-sudo apt install alacritty
-```
-
-### Discord 
-```
-sudo apt install discord
-```
-
-### Kitty
-```
-sudo apt install kitty
-```
-
