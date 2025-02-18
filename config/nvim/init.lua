@@ -1,2 +1,2 @@
-require("sijan.core")
-require("sijan.lazy")
+-- targetting a directory
+require("nixos")

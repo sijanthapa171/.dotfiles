@@ -1,0 +1,84 @@
+---
+- name: Install Neovim from source
+  hosts: localhost
+  tasks:
+    # Update apt cache first to ensure fresh package information
+    - name: Update the apt cache
+      ansible.builtin.apt:
+        update_cache: yes
+      become: yes
+
+    # Added missing build dependencies and removed hererocks from apt list
+    - name: Ensure required build tools and dependencies are installed
+      ansible.builtin.package:
+        name:
+          - ninja-build
+          - gettext
+          - cmake
+          - unzip
+          - curl
+          - git
+          - fzf
+          - luajit
+          - luarocks
+          - ripgrep
+          - libtool
+          - libtool-bin
+          - autoconf
+          - automake
+          - g++
+          - pkg-config
+          - python3
+          - python3-pip
+          # Additional build dependencies
+          - libuv-dev
+          - libluv2-dev
+          - libunibilium-dev
+          - libmsgpack-dev
+          - libtermkey-dev
+          - libvterm-dev
+          - libluajit-5.1-dev
+          - lua5.1
+          - lua-lpeg
+          - lua-mpack
+          - lua-bitop
+          - doxygen
+        state: present
+      become: yes
+
+    # Hererocks needs to be installed via pip
+    - name: Install hererocks via pip
+      ansible.builtin.pip:
+        name: hererocks
+      become: yes
+
+    - name: Clone Neovim repository
+      ansible.builtin.git:
+        repo: https://github.com/neovim/neovim.git
+        dest: /usr/local/src/neovim
+        version: stable
+      become: yes
+
+    # Build process remains the same but now has all required dependencies
+    - name: Build and install Neovim
+      ansible.builtin.shell: |
+        make CMAKE_BUILD_TYPE=Release
+        make install
+      args:
+        chdir: /usr/local/src/neovim
+      become: yes
+
+    - name: Verify Neovim installation
+      ansible.builtin.command: nvim --version
+      register: neovim_version
+      ignore_errors: yes
+
+    - name: Debug Neovim version
+      ansible.builtin.debug:
+        msg: "Installed Neovim version: {{ neovim_version.stdout }}"
+
+    - name: Remove Neovim source directory
+      ansible.builtin.file:
+        path: /usr/local/src/neovim
+        state: absent
+      become: yes
