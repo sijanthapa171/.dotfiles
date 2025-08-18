@@ -73,3 +73,11 @@ powershell -ExecutionPolicy Bypass -File "$env:USERPROFILE\.dotfiles\installers\
 # WSL installation
 Next "Installing WSL"
 powershell -ExecutionPolicy Bypass -File "$env:USERPROFILE\.dotfiles\installers\wsl.ps1"
+
+# NixOS WSL installation (optional)
+Write-Host "`nWould you like to install NixOS WSL as well? (y/N)"
+$installNixOS = Read-Host
+if ($installNixOS -eq "y" -or $installNixOS -eq "Y") {
+    Next "Installing NixOS WSL"
+    powershell -ExecutionPolicy Bypass -File "$env:USERPROFILE\.dotfiles\installers\nixos-wsl.ps1"
+}

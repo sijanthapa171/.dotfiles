@@ -27,6 +27,21 @@ cd linux/
 # Choose your distribution folder and run init.sh
 ```
 
+### NixOS WSL Setup
+
+For a declarative, reproducible development environment:
+
+```powershell
+# Run the dedicated NixOS WSL installer
+powershell -ExecutionPolicy Bypass -File "$env:USERPROFILE\.dotfiles\installers\nixos-wsl.ps1"
+```
+
+This will:
+- Download and install NixOS WSL
+- Clone your NixOS configuration from [sijanthapa171/nixos-wsl](https://github.com/sijanthapa171/nixos-wsl)
+- Set up integration with your dotfiles
+- Install win32yank for clipboard integration
+
 ## 📁 Repository Structure
 
 ```
@@ -44,6 +59,7 @@ cd linux/
 │   ├── apps/           # Application installations
 │   ├── customizations/ # UI customizations and fonts
 │   ├── git.ps1         # Git and SSH setup
+│   ├── nixos-wsl.ps1   # NixOS WSL setup
 │   ├── others.ps1      # Miscellaneous configurations
 │   └── wsl.ps1         # WSL installation
 ├── linux/              # Linux distribution scripts
@@ -125,6 +141,16 @@ cd linux/
 - kubectl setup
 - Configuration file symlinking
 - Distribution-specific optimizations
+
+### NixOS WSL Features
+- Declarative system configuration with Nix
+- Integration with your [NixOS WSL configuration](https://github.com/sijanthapa171/nixos-wsl)
+- nixvim as the default editor
+- zsh with Starship prompt
+- fzf, lsd, zoxide, and broot integration
+- Docker support
+- win32yank for clipboard integration
+- Automatic package management with flakes
 
 ## 🔧 Configuration Files
 
