@@ -35,5 +35,28 @@
         timeout_ms = 1000,
       })
     end, { desc = "Format file or range (in visual mode)" })
+
+    -- Add Ctrl+S keybinding for save and format
+    vim.keymap.set({ "n", "i", "v" }, "<C-s>", function()
+      -- Save the file first
+      vim.cmd("write")
+      -- Show a brief message
+      vim.notify("File saved and formatting...", vim.log.levels.INFO, { timeout = 1000 })
+      -- Then format it
+      conform.format({
+        lsp_fallback = true,
+        async = false,
+        timeout_ms = 1000,
+      })
+    end, { desc = "Save and format file", silent = true })
+
+    -- Also add a keybinding for just formatting without saving
+    vim.keymap.set({ "n", "v" }, "<leader>f", function()
+      conform.format({
+        lsp_fallback = true,
+        async = false,
+        timeout_ms = 1000,
+      })
+    end, { desc = "Format file", silent = true })
   end,
 }
