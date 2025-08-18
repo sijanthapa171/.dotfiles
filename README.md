@@ -184,32 +184,6 @@ git pull origin main
 # Re-run setup scripts if needed
 ```
 
-## 🛡️ Security Notes
-
-- SSH keys are generated automatically during setup
-- GitHub CLI authentication is configured
-- KeePassXC is installed for secure password management
-- All scripts run with appropriate privilege levels
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test on your system
-5. Submit a pull request
-
-## 📝 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 🙏 Acknowledgments
-
-- [Oh My Posh](https://ohmyposh.dev/) for PowerShell theming
-- [FiraCode](https://github.com/tonsky/FiraCode) for the programming font
-- [SeelenUI](https://github.com/SeelenTeam/SeelenUI) for UI enhancements
-- The open source community for all the amazing tools
-
 ---
 
 **Note:** This setup is designed for personal use and may need customization for your specific needs. Always review scripts before running them on your system.
