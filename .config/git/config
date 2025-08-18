@@ -1,0 +1,21 @@
+[user]
+	email = thapasijan329@gmail.com
+	name = Sijan Lamichhane Magar
+[pull]
+	ff = only
+[submodule]
+	recurse = true
+[push]
+	autoSetupRemote = true
+[core]
+	editor = code --wait
+	autocrlf = false
+[safe]
+	directory = C:/Users/dlmqc/.dotfiles
+	directory = C:/Users/dlmqc/.dotfiles/DeepType-Theme
+	directory = C:/Users/dlmqc/repos/DeepType-Theme
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

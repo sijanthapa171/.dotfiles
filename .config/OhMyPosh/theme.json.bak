@@ -1,0 +1,113 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "type": "prompt",
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "background": "#333",
+          "template": "⠀"
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "background": "#444",
+          "template": "⠀"
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "background": "#555",
+          "template": "⠀"
+        },
+        {
+          "alias": "------- EJECUTION TIME -------",
+          "background": "#666",
+          "foreground": "#fff",
+          "leading_diamond": "",
+          "style": "diamond",
+          "template": " {{ .FormattedMs }} ",
+          "type": "executiontime",
+          "properties": {
+            "always_enabled": true,
+            "style": "austin"
+          }
+        },
+        {
+          "alias": "------- ACTUAL ROUTE -------",
+          "background": "#247ddc",
+          "foreground": "#ffffff",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "style": "agnoster_short"
+          },
+          "style": "powerline",
+          "template": " \uf07b {{ .Path }} ",
+          "type": "path"
+        },
+        {
+          "type": "git",
+          "style": "plain",
+          "template": " on "
+        },
+        {
+          "alias": "------- GIT BRANCH -------",
+          "type": "git",
+          "style": "plain",
+          "foreground": "green",
+          "template": "{{ .HEAD }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if .Staging.Changed }}{{ if .Working.Changed }} |{{ end }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}{{ if or (.Working.Changed) (.Staging.Changed) }} |{{ end }} \ueb4b {{ .StashCount }}{{ end }}",
+          "properties": {
+            "branch_max_length": 20,
+            "branch_icon": " ",
+            "commit_icon": " ",
+            "fetch_stash_count": true,
+            "fetch_status": true,
+            "fetch_upstream_icon": true
+          }
+        },
+        {
+          "type": "node",
+          "style": "plain",
+          "template": " via <green>\uE718 {{ .Full }}</>"
+        },
+        {
+          "type": "rust",
+          "style": "plain",
+          "template": " via <lightRed> {{ .Full }}</>"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "time",
+          "style": "plain",
+          "foreground": "darkGray",
+          "properties": {
+            "time_format": "15:04:05"
+          }
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "#ff3142",
+          "template": "= @sijanthapa171 =>"
+        }
+      ]
+    }
+  ],
+  "final_space": true,
+  "version": 2
+}

@@ -1,1 +1,0 @@
-# Wezterm Docs

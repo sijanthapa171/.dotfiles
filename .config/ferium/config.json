@@ -1,0 +1,129 @@
+{
+  "active_profile": 0,
+  "active_modpack": 0,
+  "profiles": [
+    {
+      "name": "personal-survival",
+      "output_dir": "\\\\?\\C:\\Users\\dlmqc\\OneDrive\\Documents\\minecraft\\mods",
+      "game_version": "1.20.4",
+      "mod_loader": "Fabric",
+      "mods": [
+        {
+          "name": "Blur (Fabric)",
+          "identifier": {
+            "ModrinthProject": "NK39zBp2"
+          }
+        },
+        {
+          "name": "Cloth Config API",
+          "identifier": {
+            "ModrinthProject": "9s6osm5g"
+          }
+        },
+        {
+          "name": "Clumps",
+          "identifier": {
+            "ModrinthProject": "Wnxd13zP"
+          }
+        },
+        {
+          "name": "Continuity",
+          "identifier": {
+            "ModrinthProject": "1IjD5062"
+          }
+        },
+        {
+          "name": "Distant Horizons",
+          "identifier": {
+            "ModrinthProject": "uCdwusMi"
+          }
+        },
+        {
+          "name": "Elytra Trinket",
+          "identifier": {
+            "ModrinthProject": "wk57PrDM"
+          }
+        },
+        {
+          "name": "Entity Culling",
+          "identifier": {
+            "ModrinthProject": "NNAgCjsB"
+          }
+        },
+        {
+          "name": "Fabric API",
+          "identifier": {
+            "ModrinthProject": "P7dR8mSH"
+          }
+        },
+        {
+          "name": "Indium",
+          "identifier": {
+            "ModrinthProject": "Orvt0mRa"
+          }
+        },
+        {
+          "name": "Iris Shaders",
+          "identifier": {
+            "ModrinthProject": "YL57xq9U"
+          }
+        },
+        {
+          "name": "LambDynamicLights",
+          "identifier": {
+            "ModrinthProject": "yBW8D80W"
+          }
+        },
+        {
+          "name": "Lithium",
+          "identifier": {
+            "ModrinthProject": "gvQqBUqZ"
+          }
+        },
+        {
+          "name": "MaLiLib",
+          "identifier": {
+            "CurseForgeProject": 303119
+          }
+        },
+        {
+          "name": "Mod Menu",
+          "identifier": {
+            "ModrinthProject": "mOgUt4GM"
+          }
+        },
+        {
+          "name": "Nvidium",
+          "identifier": {
+            "ModrinthProject": "SfMw2IZN"
+          }
+        },
+        {
+          "name": "Sodium",
+          "identifier": {
+            "ModrinthProject": "AANobbMI"
+          }
+        },
+        {
+          "name": "Trinkets",
+          "identifier": {
+            "ModrinthProject": "5aaWibi9"
+          }
+        },
+        {
+          "name": "Tweakeroo",
+          "identifier": {
+            "CurseForgeProject": 297344
+          }
+        },
+        {
+          "name": "Xaero's World Map",
+          "identifier": {
+            "ModrinthProject": "NcUtCpym"
+          }
+        }
+      ]
+    }
+  ],
+  "modpacks": []
+}

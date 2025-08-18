@@ -1,0 +1,155 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 3,
+  "console_title_template": "{{.UserName}}@{{.HostName}} {{.Shell}} in {{.Folder}}",
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "\u2800",
+          "background": "#333",
+          "type": "text",
+          "style": "plain"
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "\u2800",
+          "background": "#444",
+          "type": "text",
+          "style": "plain"
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "\u2800",
+          "background": "#555",
+          "type": "text",
+          "style": "plain"
+        },
+        {
+          "alias": "------- LAST COMMAND EXIT CODE -------",
+          "type": "status",
+          "style": "plain",
+          "background": "#666",
+          "foreground": "foreground",
+          "foreground_templates": [
+            "{{ if .Error }}yellow{{ end }}"
+          ],
+          "template": " {{ .Code }}",
+          "properties": {
+            "always_enabled": true
+          }
+        },
+        {
+          "properties": {
+            "always_enabled": true,
+            "cache_duration": "none",
+            "style": "austin"
+          },
+          "alias": "------- LAST COMMAND EJECUTION TIME -------",
+          "template": ":{{ .FormattedMs }} ",
+          "foreground": "#fff",
+          "background": "#666",
+          "type": "executiontime",
+          "style": "diamond"
+        },
+        {
+          "properties": {
+            "cache_duration": "none",
+            "style": "agnoster_short"
+          },
+          "alias": "------- ACTUAL ROUTE -------",
+          "template": " \uf07b {{ .Path }} ",
+          "foreground": "#ffffff",
+          "powerline_symbol": "\ue0b0",
+          "background": "#247ddc",
+          "type": "path",
+          "style": "powerline"
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": " on ",
+          "type": "git",
+          "style": "plain"
+        },
+        {
+          "properties": {
+            "branch_icon": "\ue0a0 ",
+            "branch_max_length": 20,
+            "cache_duration": "none",
+            "commit_icon": "\uf417 ",
+            "fetch_stash_count": true,
+            "fetch_status": true,
+            "fetch_upstream_icon": true
+          },
+          "alias": "------- GIT BRANCH -------",
+          "template": "{{ .HEAD }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if .Staging.Changed }}{{ if .Working.Changed }} |{{ end }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}{{ if or (.Working.Changed) (.Staging.Changed) }} |{{ end }} \ueb4b {{ .StashCount }}{{ end }}",
+          "foreground": "green",
+          "type": "git",
+          "style": "plain"
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": " via <green>\ue718 {{ .Full }}</>",
+          "type": "node",
+          "style": "plain"
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": " via <lightRed>\ue7a8 {{ .Full }}</>",
+          "type": "rust",
+          "style": "plain"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "properties": {
+            "cache_duration": "none",
+            "time_format": "15:04:05"
+          },
+          "foreground": "darkGray",
+          "type": "time",
+          "style": "plain"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "@auth =>",
+          "foreground": "#ff3142",
+          "type": "text",
+          "style": "plain"
+        }
+      ],
+      "newline": true
+    }
+  ],
+  "secondary_prompt": {
+    "template": "> "
+  },
+  "final_space": true
+}
