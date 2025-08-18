@@ -12,3 +12,6 @@ New-Item -Path "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTermina
 #New-ItemProperty -Path $rutaRegistro -Name Personal -Value '%USERPROFILE%\.config' -Type ExpandString -Force
 
 ~\.dotfiles\installers\customizations\fonts.ps1
+
+# Spicetify setup for Spotify customization
+~\.dotfiles\installers\customizations\spicetify.ps1

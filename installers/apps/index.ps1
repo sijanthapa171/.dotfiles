@@ -44,6 +44,10 @@ Write-Host "`nInstaling Discord Client"
 winget install --id Vencord.Vesktop -s winget
 # winget install --id Discord.Discord -s winget
 
+Write-Host "`nInstaling Spotify"
+# Prefer official Spotify package (Store version). Spicetify supports it.
+winget install --id Spotify.Spotify -s msstore --accept-package-agreements
+
 Write-Host "A dev tool needs manual installation: https://github.com/microsoft/accessibility-insights-windows"
 
 # MSIX Hero
