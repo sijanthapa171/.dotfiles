@@ -37,9 +37,20 @@ cd linux/
 For a declarative, reproducible development environment:
 
 ```powershell
-# Run the dedicated NixOS WSL installer
+# Windows PowerShell (5.1)
 powershell -ExecutionPolicy Bypass -File "$env:USERPROFILE\.dotfiles\installers\nixos-wsl.ps1"
+
+# PowerShell 7+
+pwsh -NoProfile -ExecutionPolicy Bypass -File "$env:USERPROFILE\.dotfiles\installers\nixos-wsl.ps1"
+
+# If elevation issues occur, use this to force Run as Administrator
+Start-Process powershell -Verb RunAs -ArgumentList '-ExecutionPolicy Bypass -File "$env:USERPROFILE\.dotfiles\installers\nixos-wsl.ps1"'
 ```
+
+If you still hit an error, please share the exact message. Common fixes:
+- Ensure WSL is installed/updated: `wsl --version` then `wsl --update`
+- Run from an elevated shell (Administrator)
+- Verify the path exists: `Test-Path "$env:USERPROFILE\.dotfiles\installers\nixos-wsl.ps1"`
 
 This will:
 - Download and install NixOS WSL
