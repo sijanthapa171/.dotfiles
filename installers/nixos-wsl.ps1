@@ -8,8 +8,13 @@ function Ensure-Admin {
     if (-not $isAdmin) {
         Write-Host "Elevating to Administrator..."
         $psi = New-Object System.Diagnostics.ProcessStartInfo
-        $psi.FileName = "powershell.exe"
-        $psi.Arguments = "-ExecutionPolicy Bypass -File `"$PSCommandPath`""
+        $currentExe = (Get-Process -Id $PID).Path
+        $psi.FileName = $currentExe
+        if ($PSVersionTable.PSEdition -eq "Core") {
+            $psi.Arguments = "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`""
+        } else {
+            $psi.Arguments = "-ExecutionPolicy Bypass -File `"$PSCommandPath`""
+        }
         $psi.Verb = "runas"
         try {
             [System.Diagnostics.Process]::Start($psi) | Out-Null
@@ -180,7 +185,9 @@ Write-Host "`n🔧 Running NixOS setup..."
 Write-Host "This may take a few minutes..."
 
 try {
-    wsl -d NixOS bash -c "chmod +x /mnt/c/Users/$env:USERNAME/NixOS/setup-nixos.sh && /mnt/c/Users/$env:USERNAME/NixOS/setup-nixos.sh"
+    $wslSetupPath = "/mnt/c/Users/$($env:USERNAME)/NixOS/setup-nixos.sh"
+    # Use semicolons instead of '&&' to avoid being parsed by PowerShell and ensure bash handles it
+    wsl -d NixOS bash -c "chmod +x '$wslSetupPath'; '$wslSetupPath'"
     Write-Host "✅ NixOS setup completed successfully!"
 } catch {
     Write-Error "❌ Failed to run NixOS setup: $_"
