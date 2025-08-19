@@ -14,9 +14,7 @@ winget install --id XPFCS9QJBKTHVZ -s msstore --accept-package-agreements
 Write-Host "`nInstaling Steam"
 winget install --id Valve.Steam
 
-Write-Host "`nInstaling Visual Studio & Code"
-winget install --id Microsoft.VisualStudio.2022.Community
-winget install --id Microsoft.VisualStudio.2022.BuildTools
+Write-Host "`nInstaling Visual Studio Code"
 winget install --id Microsoft.VisualStudioCode
 
 Write-Host "`nInstaling Docker"
@@ -52,8 +50,6 @@ Write-Host "A dev tool needs manual installation: https://github.com/microsoft/a
 
 # MSIX Hero
 winget install --id MarcinOtorowski.MSIXHero -s winget
-winget install --id Microsoft.DotNet.AspNetCore.8 -s winget
-winget install --id Microsoft.DotNet.DesktopRuntime.8 -s winget
 
 # MSIX Packaging Tool
 winget install --id 9N5LW3JBCXKF -s msstore --accept-package-agreements
