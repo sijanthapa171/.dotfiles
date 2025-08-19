@@ -2,7 +2,10 @@
 
 A comprehensive collection of dotfiles and setup scripts for Windows and Linux environments. This repository contains configuration files, installation scripts, and customizations for a complete development environment setup.
 
-> Don't blindly use my setup. Use at your own risk!!!
+
+> [!IMPORTANT]
+> ⚠️ Don't blindly use my setup. Use at your own risk!!!
+
 
 ## 🚀 Quick Start
 
