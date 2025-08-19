@@ -11,9 +11,6 @@ winget install --id KeePassXCTeam.KeePassXC
 Write-Host "`nInstaling Spark Email Client"
 winget install --id XPFCS9QJBKTHVZ -s msstore --accept-package-agreements
 
-Write-Host "`nInstaling Steam"
-winget install --id Valve.Steam
-
 Write-Host "`nInstaling Visual Studio Code"
 winget install --id Microsoft.VisualStudioCode
 
