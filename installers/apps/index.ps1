@@ -23,6 +23,9 @@ winget install --id AutoHotkey.AutoHotkey
 Write-Host "`nInstaling NodeJs"
 winget install --id OpenJS.NodeJS.LTS -s winget
 
+Write-Host "`nInstaling LazyGit"
+winget install --id JesseDuffield.lazygit -s winget
+
 Write-Host "`nInstaling Rust"
 winget install --id Rustlang.Rustup
 
